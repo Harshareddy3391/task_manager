@@ -36,3 +36,13 @@ step:2
 import database=engine--connet application to db
 import model=Base ---------- base contain orm models 
 
+
+step :7
+
+update schema file
+import Basemodel,Emailstr from pydantic
+
+
+create one cls with Basemodel
+
+
