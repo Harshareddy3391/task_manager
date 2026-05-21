@@ -5,6 +5,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from database import SessionLocal
 from models import User
 from schemas import Usercreate
+from auth import pwd_context
 
 
 
@@ -31,7 +32,7 @@ def user_register(user_info:Usercreate):
         new_user=User(
         username=user_info.username,
         email=user_info.email,
-        password=user_info.password
+        password=pwd_context.hash(user_info.password)
 
         )
 
