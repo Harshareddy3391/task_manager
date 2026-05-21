@@ -3,7 +3,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-data_base_url="mysql+pymysql://root:harsha%40345@localhost/task_manager"
+data_base_url="mysql+pymysql://root:Harsha%40345@localhost/task_manager"
 
 engine=create_engine(data_base_url)
 
@@ -13,4 +13,4 @@ SessionLocal=sessionmaker(
     bind=engine
 )
 
-Base=declarative_base
+Base=declarative_base()

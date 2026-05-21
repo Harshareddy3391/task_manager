@@ -17,4 +17,20 @@ step:2
  write main file and run that file 
  >> successfully run fast api application run on server
 
+ step : 4
+
+ connect the fast application and database 
+
+ write database file
+
+ step:5
+ create table 
+ in model py file
+
+
+
+ step:6
+
+ update main file 
+
  
