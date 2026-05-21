@@ -8,7 +8,7 @@ Base.metadata.create_all(bind=engine)
 app=FastAPI()
 
 
-@app.get("/")
+@app.get("/Home")
 def home_page():
     return{
         "msg":"home page created successfully"
