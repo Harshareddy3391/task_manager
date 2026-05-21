@@ -45,4 +45,11 @@ import Basemodel,Emailstr from pydantic
 
 create one cls with Basemodel
 
+step : 8
+ update user file import sqlalchemy.orm 
+ session
+
+ intialize db to connecte out code db
+
+ and update main file with user file app.include_router
 

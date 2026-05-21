@@ -2,7 +2,9 @@ from fastapi import APIRouter
 from sqlalchemy.orm import Session
 
 from database import SessionLocal
-from app import schemas,models
+from models import User
+from schemas import Usercreate
+
 
 
 rout=APIRouter()
@@ -20,10 +22,10 @@ def get_db():
 
 #register
 @rout.post("/Register")
-def user_register(user_info:schemas.Usercreate):
+def user_register(user_info:Usercreate):
     db=next(get_db())
 
-    new_user=models.User(
+    new_user=User(
         username=user_info.username,
         email=user_info.email,
         password=user_info.password
