@@ -11,3 +11,17 @@ pwd_context=CryptContext(
 def hash_password(password:str):
     return pwd_context.hash(password)
 
+
+
+
+
+
+#password verification
+def verify_password(plain_password,hash_password):
+
+    return pwd_context.verify(
+        plain_password,
+        hash_password
+    )
+
+

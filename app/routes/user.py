@@ -59,3 +59,7 @@ def user_register(user_info:Usercreate):
             status_code=500,
             detail="somting went wrong..."
         )
+    
+
+
+ 
