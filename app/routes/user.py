@@ -4,8 +4,8 @@ from sqlalchemy.exc import SQLAlchemyError
 
 from database import SessionLocal
 from models import User
-from schemas import Usercreate
-from auth import pwd_context
+from schemas import Usercreate,Login
+from auth import pwd_context,verify_password
 
 
 
@@ -61,5 +61,41 @@ def user_register(user_info:Usercreate):
         )
     
 
+#login
 
- 
+@rout.post("/Login")
+def user_login(user_data:Login):
+
+    db=next(get_db())
+
+
+    exist_user=db.query(User).filter(user_data.email == User.email).first()
+    try:
+        if not exist_user:
+            raise HTTPException(
+            status_code=404,
+            detail="user not found"
+            )
+        
+    
+        if not verify_password(user_data.password,exist_user.password):
+            raise HTTPException (
+            status_code=404,
+            detail="Invalid password"
+            )
+    
+
+        return {
+        "message":"user successfully login..."
+            }
+    except SQLAlchemyError as e:
+        db.rollback()
+        raise HTTPException(
+            status_code=401,
+            detail=f"internal error:{str(e)}"
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"somthing error{str(e)}"
+        )
