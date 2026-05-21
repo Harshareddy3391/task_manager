@@ -53,3 +53,41 @@ step : 8
 
  and update main file with user file app.include_router
 
+
+ step :9
+ updat auth file
+ import pass-lib and bcrypt
+
+ hash the password
+
+ and update user file with hash password
+
+
+ step:10
+
+ update the auth file with verify password
+
+ update schema file with login class
+ 
+ and import verify password
+ update user file with verify pass for login purpose
+
+
+
+
+step :11
+FastAPI setup
+✅ MySQL connection
+✅ SQLAlchemy ORM
+✅ User table
+✅ Pydantic schemas
+✅ Register API
+✅ Password hashing
+✅ Login API
+✅ Password verification
+
+
+
+step : 12
+
+
