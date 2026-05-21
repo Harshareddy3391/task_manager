@@ -1,5 +1,6 @@
-from fastapi import APIRouter
+from fastapi import APIRouter,HTTPException
 from sqlalchemy.orm import Session
+from sqlalchemy.exc import SQLAlchemyError
 
 from database import SessionLocal
 from models import User
@@ -17,7 +18,7 @@ def get_db():
         yield db
 
     finally:
-        db.close
+        db.close()
 
 
 #register
@@ -25,20 +26,35 @@ def get_db():
 def user_register(user_info:Usercreate):
     db=next(get_db())
 
-    new_user=User(
+    try:
+
+        new_user=User(
         username=user_info.username,
         email=user_info.email,
         password=user_info.password
 
-    )
+        )
 
 
-    db.add(new_user)
-    db.commit()
-    db.refresh(new_user)
+        db.add(new_user)
+        db.commit()
+        db.refresh(new_user)
 
 
 
-    return {
+
+        return {
         "message":"user registered successfully"
-    }
+        }
+
+    except SQLAlchemyError as e:
+        db.rollback()
+        raise HTTPException(
+            status_code=500,
+            detail=f"Database error occurred: {str(e)}"
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail="somting went wrong..."
+        )
