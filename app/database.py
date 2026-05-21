@@ -8,7 +8,7 @@ data_base_url="mysql+pymysql://root:Harsha%40345@localhost/task_manager"
 engine=create_engine(data_base_url)
 
 SessionLocal=sessionmaker(
-    autocomit=True,
+   autocommit=False,
     autoflush=False,
     bind=engine
 )
