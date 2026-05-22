@@ -5,7 +5,8 @@ from sqlalchemy.exc import SQLAlchemyError
 from database import SessionLocal
 from models import User
 from schemas import Usercreate,Login
-from auth import pwd_context,verify_password
+from auth import pwd_context,verify_password,create_access_token
+
 
 
 
@@ -83,11 +84,19 @@ def user_login(user_data:Login):
             status_code=404,
             detail="Invalid password"
             )
+        
+
+        access_tocken=create_access_token(
+            data={
+                "sub":exist_user.email
+            }
+        )
     
 
-        return {
-        "message":"user successfully login..."
-            }
+        return  {
+            "access_tocken":access_tocken,
+            "tocken_type":"bearer"
+        }
     except SQLAlchemyError as e:
         db.rollback()
         raise HTTPException(
