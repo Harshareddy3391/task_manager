@@ -89,5 +89,128 @@ FastAPI setup
 
 
 step : 12
+update model file with new table for creating task 
+
+import Foreign key for maintain relation bitween two tables
+
+step : 13
+genarate jwt tocken 
+import jwt,jwtError
+
+create jwt tockes
+
+step : 14
+
+update the schema file with task create class
+
+
+
+
+Your Project Progress
+Completed Features ✅
+Authentication Module
+
+✅ User Registration
+✅ User Login
+✅ Password Hashing
+✅ Password Verification
+✅ JWT Token Generation
+
+Database Module
+
+✅ MySQL Connection
+✅ SQLAlchemy ORM Setup
+✅ Users Table
+✅ Tasks Table
+
+API Module
+
+✅ Register API
+✅ Login API
+
+Validation Module
+
+✅ Pydantic Schemas
+✅ Email Validation
+✅ Request Validation
+
+Project Setup
+
+✅ Folder Structure
+✅ Virtual Environment
+✅ Git Setup
+✅ GitHub Push
+✅ .gitignore
+✅ requirements.txt
+
+Remaining Features 🚀
+Task Management APIs
+
+❌ Create Task API
+❌ Get All Tasks API
+❌ Update Task API
+❌ Delete Task API
+
+JWT Protected Routes
+
+❌ Verify Token
+❌ Get Current Logged-in User
+❌ Protected APIs
+
+Relationship Features
+
+❌ Link tasks to logged-in user properly
+❌ Show only user’s own tasks
+
+
+diff
+
+
+
+Completed So Far ✅
+Authentication
+
+✅ Register API
+✅ Login API
+✅ Password Hashing
+✅ Password Verification
+✅ JWT Token Generation
+
+Database
+
+✅ MySQL connection
+✅ SQLAlchemy setup
+✅ Users table
+✅ Tasks table
+
+Models
+
+✅ User model
+✅ Task model
+✅ ForeignKey relationship
+
+Schemas
+
+✅ UserCreate
+✅ Login
+✅ TaskCreate
+
+Setup
+
+✅ Folder structure
+✅ Git & GitHub setup
+✅ .gitignore
+✅ requirements.txt
+
+Current Completion
+≈ 75% completed
+Remaining Features 🚀
+Task APIs
+
+❌ Create Task API
+❌ Get All Tasks API
+❌ Update Task API
+❌ Delete Task API
+
 
 

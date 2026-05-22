@@ -10,3 +10,11 @@ class Usercreate(BaseModel):
 class Login(BaseModel):
       email:EmailStr
       password:str
+
+
+class Taskcrete(BaseModel):
+     title:str
+     description:str
+     status:str
+
+     
