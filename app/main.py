@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from database import engine
 from models import Base
 from routes.user import rout as user
+from routes.task import Task as usertask
  
 
 Base.metadata.create_all(bind=engine)
@@ -18,3 +19,4 @@ def home_page():
 
 
 app.include_router(user)
+app.include_router(usertask)
