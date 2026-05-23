@@ -94,6 +94,7 @@ def user_login(user_data:Login):
     
 
         return  {
+            "user_info":user_data.email,
             "access_tocken":access_tocken,
             "tocken_type":"bearer"
         }

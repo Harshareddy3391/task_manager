@@ -12,9 +12,8 @@ class Login(BaseModel):
       password:str
 
 
-class Taskcrete(BaseModel):
+class TaskCrete(BaseModel):
      title:str
      description:str
      status:str
 
-     
